@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project DefaultTargets="Build" ToolsVersion="14.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup Label="ProjectConfigurations">
     <ProjectConfiguration Include="Unicode Debug|Win32">
       <Configuration>Unicode Debug</Configuration>
@@ -27,7 +27,7 @@
   <PropertyGroup>
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <CharacterSet>Unicode</CharacterSet>
-    <PlatformToolset>v120_xp</PlatformToolset>
+    <PlatformToolset>v140_xp</PlatformToolset>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Unicode Debug|Win32'" Label="Configuration">
     <UseDebugLibraries>true</UseDebugLibraries>
@@ -132,14 +132,14 @@
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
-    <Import Project="..\..\PowerEditor\visual.net\packages\boost.1.58.0.0\build\native\boost.targets" Condition="Exists('..\..\PowerEditor\visual.net\packages\boost.1.58.0.0\build\native\boost.targets')" />
-    <Import Project="..\..\PowerEditor\visual.net\packages\boost_regex-vc120.1.58.0.0\build\native\boost_regex-vc120.targets" Condition="Exists('..\..\PowerEditor\visual.net\packages\boost_regex-vc120.1.58.0.0\build\native\boost_regex-vc120.targets')" />
+    <Import Project="..\..\PowerEditor\visual.net\packages\boost.1.61.0.0\build\native\boost.targets" Condition="Exists('..\..\PowerEditor\visual.net\packages\boost.1.61.0.0\build\native\boost.targets')" />
+    <Import Project="..\..\PowerEditor\visual.net\packages\boost_regex-vc140.1.61.0.0\build\native\boost_regex-vc140.targets" Condition="Exists('..\..\PowerEditor\visual.net\packages\boost_regex-vc140.1.61.0.0\build\native\boost_regex-vc140.targets')" />
   </ImportGroup>
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\..\PowerEditor\visual.net\packages\boost.1.58.0.0\build\native\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\PowerEditor\visual.net\packages\boost.1.58.0.0\build\native\boost.targets'))" />
-    <Error Condition="!Exists('..\..\PowerEditor\visual.net\packages\boost_regex-vc120.1.58.0.0\build\native\boost_regex-vc120.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\PowerEditor\visual.net\packages\boost_regex-vc120.1.58.0.0\build\native\boost_regex-vc120.targets'))" />
+    <Error Condition="!Exists('..\..\PowerEditor\visual.net\packages\boost.1.61.0.0\build\native\boost.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\PowerEditor\visual.net\packages\boost.1.61.0.0\build\native\boost.targets'))" />
+    <Error Condition="!Exists('..\..\PowerEditor\visual.net\packages\boost_regex-vc140.1.61.0.0\build\native\boost_regex-vc140.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\..\PowerEditor\visual.net\packages\boost_regex-vc140.1.61.0.0\build\native\boost_regex-vc140.targets'))" />
   </Target>
 </Project>

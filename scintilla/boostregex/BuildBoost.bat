@@ -117,6 +117,11 @@ IF NOT [%MSVCTOOLSET%]==[] (
     GOTO TOOLSETKNOWN
 )
 
+:: VS2015
+IF EXIST %BOOSTPATH%\bin.v2\libs\regex\build\msvc-14.0\release\link-static\runtime-link-static\threading-multi\libboost_regex-vc140-mt-s-%BOOSTVERSION%.lib (
+	SET MSVCTOOLSET=msvc-14.0
+)
+
 :: VS2013
 IF EXIST %BOOSTPATH%\bin.v2\libs\regex\build\msvc-12.0\release\link-static\runtime-link-static\threading-multi\libboost_regex-vc120-mt-s-%BOOSTVERSION%.lib (
 	SET MSVCTOOLSET=msvc-12.0
@@ -155,6 +160,11 @@ ECHO Run buildboost.bat without parameters to see the usage.
 
 
 :TOOLSETKNOWN
+
+:: VS2015
+IF [%MSVCTOOLSET%]==[msvc-14.0] (
+	SET BOOSTLIBPATH=%BOOSTPATH%\bin.v2\libs\regex\build\msvc-14.0
+)
 
 :: VS2013
 IF [%MSVCTOOLSET%]==[msvc-12.0] (
